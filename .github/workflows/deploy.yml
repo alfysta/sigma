@@ -5,11 +5,8 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# 🔥 Tambah permissions
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   build-and-deploy:
@@ -17,12 +14,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5  # ← Update v4 → v5
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5  # ← Update v4 → v5
+        uses: actions/setup-node@v4
         with:
-          node-version: 22  # ← Update 20 → 22
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
@@ -43,7 +40,8 @@ jobs:
         run: npm run build -- --mode production
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4  # ← Update v3 → v4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          folder: dist
+          branch: gh-pages
+          clean: true
