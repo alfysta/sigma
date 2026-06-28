@@ -1,0 +1,316 @@
+/* ═══════════════════════════════════════════
+   GOOGLE FONTS - HARUS DI PALING ATAS!
+   ═══════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* ═══════════════════════════════════════════
+   TAILWIND CSS
+   ═══════════════════════════════════════════ */
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --color-brand-main: #3b0764;
+    --color-brand-gold: #fbbf24;
+}
+
+/* ═══════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════ */
+@layer base {
+    html {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+        background: radial-gradient(circle at 30% 10%, #2d0a4e, #000000);
+        color: #f3f4f6;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        transition: background 0.5s ease, color 0.5s ease;
+        background: radial-gradient(circle at 30% 10%, #2d0a4e, #000000);
+        overflow-x: hidden;
+    }
+
+    /* Scrollbar Premium */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(251, 191, 36, 0.4);
+        border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(251, 191, 36, 0.8);
+    }
+}
+
+/* ═══════════════════════════════════════════
+   COMPONENT CLASSES
+   ═══════════════════════════════════════════ */
+@layer components {
+
+    /* Glass Card */
+    .glass-card {
+        background: rgba(20, 5, 35, 0.55);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+        border-radius: 1.5rem;
+        transition: all 0.5s ease;
+    }
+
+    /* Text Gold Gradient */
+    .text-gold-gradient {
+        background: linear-gradient(to right, #fbbf24, #fef08a, #fbbf24);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Button Gold */
+    .btn-gold {
+        background: linear-gradient(135deg, #fbbf24, #d97706);
+        color: #1e0a2d;
+        font-weight: 700;
+        border-radius: 0.75rem;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .btn-gold:hover {
+        box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        transform: translateY(-2px);
+    }
+
+    /* Input Dark */
+    .input-dark {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(107, 33, 168, 0.6);
+        color: white;
+        border-radius: 0.75rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .input-dark:focus {
+        outline: none;
+        border-color: #fbbf24;
+        box-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
+    }
+}
+
+/* ═══════════════════════════════════════════
+   LIGHT MODE - PREMIUM WHITE THEME
+   ═══════════════════════════════════════════ */
+body.light-mode {
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+/* ─── Glass Card ─── */
+body.light-mode .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+body.light-mode .glass-card:hover {
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* ─── Text Gradient ─── */
+body.light-mode .text-gold-gradient {
+    background: linear-gradient(to right, #7c3aed, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ─── Button Gold ─── */
+body.light-mode .btn-gold {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: #ffffff;
+}
+
+body.light-mode .btn-gold:hover {
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* ─── Input Dark ─── */
+body.light-mode .input-dark {
+    background: #ffffff;
+    border: 1.5px solid rgba(124, 58, 237, 0.15);
+    color: #1e293b;
+}
+
+body.light-mode .input-dark:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.08);
+}
+
+/* ─── Sidebar ─── */
+body.light-mode aside[style*="background"] {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-right: 1px solid rgba(124, 58, 237, 0.08) !important;
+}
+
+/* ─── Header ─── */
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.06) !important;
+}
+
+/* ─── Text Colors ─── */
+body.light-mode .text-white {
+    color: #1e293b !important;
+}
+
+body.light-mode .text-gray-300 {
+    color: #475569 !important;
+}
+
+body.light-mode .text-gray-400 {
+    color: #64748b !important;
+}
+
+body.light-mode .text-gray-500 {
+    color: #94a3b8 !important;
+}
+
+
+/* ─── Dropdown ─── */
+body.light-mode .dropdown-menu,
+body.light-mode .theme-dropdown {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(124, 58, 237, 0.15) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-mode .theme-option {
+    color: #475569 !important;
+}
+
+body.light-mode .theme-option:hover {
+    background: rgba(124, 58, 237, 0.1) !important;
+    color: #7c3aed !important;
+}
+
+body.light-mode .theme-option.active {
+    background: rgba(124, 58, 237, 0.15) !important;
+    color: #7c3aed !important;
+}
+
+/* ─── Border Colors ─── */
+body.light-mode .border-white\/5 {
+    border-color: rgba(124, 58, 237, 0.06) !important;
+}
+
+body.light-mode .border-white\/10 {
+    border-color: rgba(124, 58, 237, 0.1) !important;
+}
+
+body.light-mode .border-white\/20 {
+    border-color: rgba(124, 58, 237, 0.15) !important;
+}
+
+/* ─── Background Colors ─── */
+body.light-mode .bg-black\/80 {
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.light-mode .bg-white\/5 {
+    background: rgba(124, 58, 237, 0.03) !important;
+}
+
+body.light-mode .hover\:bg-white\/5:hover {
+    background: rgba(124, 58, 237, 0.05) !important;
+}
+
+body.light-mode .hover\:bg-white\/10:hover {
+    background: rgba(124, 58, 237, 0.08) !important;
+}
+
+/* ─── Scrollbar ─── */
+body.light-mode ::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.2) !important;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: rgba(124, 58, 237, 0.4) !important;
+}
+
+/* ─── Avatar Border ─── */
+body.light-mode .avatar-circle {
+    border-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+/* ─── Hamburger Button ─── */
+body.light-mode .hamburger-btn {
+    background: rgba(124, 58, 237, 0.03) !important;
+    border-color: rgba(124, 58, 237, 0.1) !important;
+    color: #7c3aed !important;
+}
+
+body.light-mode .hamburger-btn:hover {
+    background: rgba(124, 58, 237, 0.08) !important;
+    border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+/* ─── Theme Switch Button ─── */
+body.light-mode .theme-switch-btn {
+    background: rgba(124, 58, 237, 0.05) !important;
+    border-color: rgba(124, 58, 237, 0.15) !important;
+    color: #7c3aed !important;
+}
+
+body.light-mode .theme-switch-btn:hover {
+    background: rgba(124, 58, 237, 0.1) !important;
+    border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+/* ─── Brand Gold Text ─── */
+body.light-mode .text-brand-gold {
+    color: #7c3aed !important;
+}
+
+/* ─── Red Text (Logout) ─── */
+body.light-mode .text-red-400 {
+    color: #ef4444 !important;
+}
+
+body.light-mode .hover\:bg-red-500\/20:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* ─── Sidebar Menu Active (Light Mode) ─── */
+body.light-mode .menu-parent-btn.menu-active {
+    background: #7c3aed !important;
+    color: #ffffff !important;
+    border-right-color: #fbbf24 !important;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4) !important;
+}
+
+body.light-mode .submenu-btn.submenu-active {
+    background: rgba(124, 58, 237, 0.15) !important;
+    color: #7c3aed !important;
+    border-right-color: #7c3aed !important;
+}
+
+/* ─── Dropdown Item Hover ─── */
+body.light-mode .dropdown-menu .hover\:bg-white\/5:hover {
+    background: rgba(124, 58, 237, 0.05) !important;
+}
